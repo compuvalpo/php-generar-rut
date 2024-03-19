@@ -3,7 +3,7 @@ PHP 7, PHP 8 que genera RUTs de Chile en forma aleatorea.
 Tambien puede revisar si un RUT ingresado es Válido o no.
 
 Para el cálculo de RUT en Chile, se utiliza el Algoritmo del Módulo 11
-[https://es.wikipedia.org/wiki/C%C3%B3digo_de_control#M%C3%B3dulo_11]
+![Algoritmo del Módulo 11](https://es.wikipedia.org/wiki/C%C3%B3digo_de_control#M%C3%B3dulo_11)
 
 La cantidad por defecto de RUT generados es 10.
 Se pueden configurar el cost en la siguiente opción:
