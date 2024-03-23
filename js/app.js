@@ -34,7 +34,9 @@ function GenerarRUT(){
 						
 						for (var i = 0; i < data.length; i ++){
 							let valor = i + 1;
-							$('.card-data').append(div +'# '+ valor +'</span><span class="form-control">'+ data[i] +'</span></div>');
+							valor = (valor<10) ? '0'+valor : valor;
+							$('.card-data').append(div +'# '+ valor +'</span><span class="form-control">'+ data[i].rut +'</span>'
+											+'<span class="form-control">'+ data[i].rutFormat +'</span></div>');
 						}
 					}, 100);
 					//SwalMensaje('RUT Generados', 'Se han generado los RUT.', 'success');

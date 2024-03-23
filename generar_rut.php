@@ -16,9 +16,10 @@
 		if ($dv == 11) $dv = '0';
 		if ($dv == 10) $dv = 'K';
 	
-		$rut = $numero.'-'.$dv;
+		$rut		= $numero.'-'.$dv;
+		$rutFormat	= number_format($numero, 0, ',', '.').'-'.$dv;
 
-		return $rut;
+		return array('rut'=>$rut,'rutFormat'=>$rutFormat);
     }
 	
 	const CANTIDADRUT	= 10;
