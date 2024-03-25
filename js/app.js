@@ -24,7 +24,6 @@ function GenerarRUT(){
             type: 'post',
             dataType: 'json',
             success: function(data) {
-				console.log(data);
 
 				if(data){
 					setTimeout(function () {
