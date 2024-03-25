@@ -40,11 +40,11 @@ function GenerarRUT(){
 					}, 100);
 					//SwalMensaje('RUT Generados', 'Se han generado los RUT.', 'success');
 				}else{
-					SwalMensaje('Error', 'Error al intentar generar los RUT.', 'error');
+					SwalMensaje('RUT no Generados', 'No se han generado los RUT.', 'error');
 				}
             },
             error: function(jqXHR, status, error) {
-				SwalMensaje('RUT no Generados', 'No se han generado los RUT.', 'error');
+				SwalMensaje('Error', 'Error al intentar generar los RUT.', 'error');
             }
         });
 	
