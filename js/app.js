@@ -29,7 +29,7 @@ function GenerarRUT(){
 					setTimeout(function () {
 
 						$('.card-data').html("");
-						let div = '<div class="input-group col-12 mb-1"><span class="btn-primary badge">';
+						let div = '<div class="input-group col-12 mb-1"><span class="btn-primary badge d-flex align-items-center">';
 						
 						for (var i = 0; i < data.length; i ++){
 							let valor = i + 1;
