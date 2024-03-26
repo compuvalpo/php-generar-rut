@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 	GenerarRUT();
+	const clipboard = new ClipboardJS('.btnClip');
 });
 
 function SwalMensaje(title, text, icon, url) {
@@ -34,8 +35,13 @@ function GenerarRUT(){
 						for (var i = 0; i < data.length; i ++){
 							let valor = i + 1;
 							valor = (valor<10) ? '0'+valor : valor;
-							$('.card-data').append(div +'# '+ valor +'</span><span class="form-control">'+ data[i].rut +'</span>'
-											+'<span class="form-control">'+ data[i].rutFormat +'</span></div>');
+							$('.card-data').append(
+								div +'# '+ valor +'</span>'
+								+'<span class="form-control">'+ data[i].rut +'</span>'
+								+'<button class="input-group-text btnClip" id="rut'+valor+'" data-clipboard-text="'+ data[i].rut +'"><i class="fa-regular fa-copy"></i></button>'
+								+'<span class="form-control ms-2">'+ data[i].rutFormat +'</span>'
+								+'<button class="input-group-text btnClip" id="rutFormat'+valor+'" data-clipboard-text="'+ data[i].rutFormat +'"><i class="fa-regular fa-copy"></i></button>'
+								+'</div>');
 						}
 					}, 100);
 					//SwalMensaje('RUT Generados', 'Se han generado los RUT.', 'success');
