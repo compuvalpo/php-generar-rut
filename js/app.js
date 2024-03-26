@@ -2,6 +2,23 @@ $(document).ready(function () {
 
 	GenerarRUT();
 	const clipboard = new ClipboardJS('.btnClip');
+
+	setTimeout(function () {
+		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+		//$('[data-bs-toggle="tooltip"]').tooltip();
+	}, 200);
+
+	clipboard.on('success', function(e) {
+
+		const id = '#' + e.trigger.getAttribute('id');
+		const tooltip = bootstrap.Tooltip.getInstance(id);
+		
+		e.trigger.setAttribute('data-bs-original-title','Copiado');
+		tooltip.show();
+		
+	});
 });
 
 function SwalMensaje(title, text, icon, url) {
@@ -38,9 +55,9 @@ function GenerarRUT(){
 							$('.card-data').append(
 								div +'# '+ valor +'</span>'
 								+'<span class="form-control">'+ data[i].rut +'</span>'
-								+'<button class="input-group-text btnClip" id="rut'+valor+'" data-clipboard-text="'+ data[i].rut +'"><i class="fa-regular fa-copy"></i></button>'
+								+'<button class="input-group-text btnClip" id="rut'+valor+'" data-clipboard-text="'+ data[i].rut +'" data-bs-toggle="tooltip" data-bs-title="Copiar"><i class="fa-regular fa-copy"></i></button>'
 								+'<span class="form-control ms-2">'+ data[i].rutFormat +'</span>'
-								+'<button class="input-group-text btnClip" id="rutFormat'+valor+'" data-clipboard-text="'+ data[i].rutFormat +'"><i class="fa-regular fa-copy"></i></button>'
+								+'<button class="input-group-text btnClip" id="rutFormat'+valor+'" data-clipboard-text="'+ data[i].rutFormat +'" data-bs-toggle="tooltip" data-bs-title="Copiar"><i class="fa-regular fa-copy"></i></button>'
 								+'</div>');
 						}
 					}, 100);
