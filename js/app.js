@@ -3,19 +3,13 @@ $(document).ready(function () {
 	GenerarRUT();
 	const clipboard = new ClipboardJS('.btnClip');
 
-	setTimeout(function () {
-		const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-		const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
-		//$('[data-bs-toggle="tooltip"]').tooltip();
-	}, 200);
-
 	clipboard.on('success', function(e) {
 
 		const id = '#' + e.trigger.getAttribute('id');
 		const tooltip = bootstrap.Tooltip.getInstance(id);
 		
 		e.trigger.setAttribute('data-bs-original-title','Copiado');
+		e.trigger.classList.add('btn-success');
 		tooltip.show();
 		
 	});
@@ -61,6 +55,11 @@ function GenerarRUT(){
 								+'</div>');
 						}
 					}, 100);
+					
+					setTimeout(function () {
+						const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+						const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+					}, 200);
 					//SwalMensaje('RUT Generados', 'Se han generado los RUT.', 'success');
 				}else{
 					SwalMensaje('RUT no Generados', 'No se han generado los RUT.', 'error');
