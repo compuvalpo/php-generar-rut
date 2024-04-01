@@ -32,3 +32,4 @@ Una vez clonado el repositorio en su carpeta de Apache [www - htdocs - html - u 
 
 ## Capturas
 ![Ejemplo 1](capturas/ejemplo_1.png)
+![Ejemplo 1](capturas/ejemplo_2.png)
